@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Michael Zidar{% endblock %}</title>
+  <meta name="description" content="Public safety innovation, AI solutions, and criminal justice research." />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <a href="/" class="nav-logo">MZ</a>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="https://github.com/michael-zidar" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/zidar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?user=xgf_0dAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Michael Zidar</p>
+    </footer>
+  </div>
+</body>
+</html>

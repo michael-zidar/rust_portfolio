@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Michael Zidar{% endblock %}
+
+{% block content %}
+  <!-- Hero -->
+  <div class="hero animate-fade-up">
+    <h1 class="display">Michael Zidar</h1>
+    <p class="body-large">
+      Building innovative solutions at the intersection of
+      public safety, technology, and criminal justice research.
+    </p>
+  </div>
+
+  <!-- Currently -->
+  <div class="section animate-fade-up stagger-1">
+    <p class="section-label">Currently</p>
+    <p class="text-secondary">
+      Sr. Manager, Corporate AI Solutions at Axon Enterprise.
+      Previously Assistant Professor at University of Cincinnati,
+      and Public Safety Innovation Manager for the City of Boulder.
+    </p>
+  </div>
+
+  <!-- Background -->
+  <div class="section animate-fade-up stagger-2">
+    <p class="section-label">Background</p>
+    <p class="text-secondary">
+      My journey has taken me from crime analyst to software developer,
+      to innovation manager, to consultant, and professor. With over a
+      decade in public safety, I'm dedicated to using technology and
+      data to enhance community safety and promote a fairer justice system.
+    </p>
+  </div>
+
+  <div class="divider animate-fade-in stagger-3"></div>
+
+  <!-- Education -->
+  <div class="section animate-fade-up stagger-3">
+    <p class="section-label">Education</p>
+    {% for edu in education %}
+    <div class="cv-entry">
+      <h3>{{ edu.degree }}</h3>
+      <p class="institution">{{ edu.institution }}</p>
+      <p class="detail">{{ edu.detail }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Experience -->
+  <div class="section animate-fade-up stagger-4">
+    <p class="section-label">Experience</p>
+    {% for exp in experience %}
+    <div class="exp-entry exp-grid">
+      <div>
+        <h3>{{ exp.role }}</h3>
+        <p class="org">{{ exp.org }}</p>
+      </div>
+      <span class="period">{{ exp.period }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Consulting -->
+  <div class="section animate-fade-up stagger-5">
+    <p class="section-label">Consulting</p>
+    <h3 class="subheading" style="font-size: 1.125rem; margin-bottom: 0.5rem;">Zidar Analytics LLC</h3>
+    <p class="text-secondary">
+      Public safety IT consulting specializing in technology, data analysis, and software development.
+      Clients include University of Colorado at Boulder, the National Police Institute, and other
+      data-driven organizations.
+    </p>
+  </div>
+
+  <!-- Publications -->
+  <div class="section animate-fade-up stagger-6">
+    <p class="section-label">Publications</p>
+    {% for item in publications %}
+    <div class="pub-entry">
+      <p>
+        <span class="authors">{{ item.authors }}</span> ({{ item.year }}).
+        <span class="title">{{ item.title }}</span>.
+        {{ item.venue }}.
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

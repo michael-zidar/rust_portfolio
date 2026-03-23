@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}Michael Zidar{% endblock %}</title>
   <meta name="description" content="Public safety innovation, AI solutions, and criminal justice research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
+  <div class="top-bar"></div>
+  <div class="scanlines"></div>
+
   <div class="container">
     <header class="nav">
-      <a href="/" class="nav-logo">MZ</a>
+      <div class="prompt">
+        <span class="prompt-user">mzidar</span><span class="prompt-at">@</span><span class="prompt-host">portfolio</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+      </div>
+      <nav class="nav-links">
+        <a href="https://github.com/michael-zidar" target="_blank" rel="noopener noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/zidar/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a href="https://scholar.google.com/citations?user=xgf_0dAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">scholar</a>
+      </nav>
     </header>
 
     <main>
@@ -18,12 +31,14 @@
     </main>
 
     <footer class="footer">
-      <ul class="footer-links">
-        <li><a href="https://github.com/michael-zidar" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/zidar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://scholar.google.com/citations?user=xgf_0dAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a></li>
-      </ul>
-      <p class="footer-copy">&copy; 2026 Michael Zidar</p>
+      <div class="footer-prompt">
+        <span class="prompt-marker">&gt;</span> exit
+      </div>
+      <div class="footer-content">
+        <span>&copy; 2026 Michael Zidar</span>
+        <span>&middot;</span>
+        <span>Rust + Axum</span>
+      </div>
     </footer>
   </div>
 </body>

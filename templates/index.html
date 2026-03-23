@@ -3,86 +3,79 @@
 {% block title %}Michael Zidar{% endblock %}
 
 {% block content %}
-  <!-- Hero -->
-  <div class="hero animate-fade-up">
-    <h1 class="display">Michael Zidar</h1>
-    <p class="body-large">
+  <section class="hero anim-in">
+    <h1 class="display">Michael Zidar<span class="cursor">_</span></h1>
+    <p class="hero-sub">
       Building innovative solutions at the intersection of
       public safety, technology, and criminal justice research.
     </p>
-  </div>
+  </section>
 
-  <!-- Currently -->
-  <div class="section animate-fade-up stagger-1">
-    <p class="section-label">Currently</p>
-    <p class="text-secondary">
-      Sr. Manager, Corporate AI Solutions at Axon Enterprise.
+  <section class="section anim-in d1">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> currently</h2>
+    <p>
+      Sr. Manager, Corporate AI Solutions at <span class="highlight">Axon Enterprise</span>.
       Previously Assistant Professor at University of Cincinnati,
       and Public Safety Innovation Manager for the City of Boulder.
     </p>
-  </div>
+  </section>
 
-  <!-- Background -->
-  <div class="section animate-fade-up stagger-2">
-    <p class="section-label">Background</p>
-    <p class="text-secondary">
+  <section class="section anim-in d2">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> background</h2>
+    <p>
       My journey has taken me from crime analyst to software developer,
       to innovation manager, to consultant, and professor. With over a
       decade in public safety, I'm dedicated to using technology and
       data to enhance community safety and promote a fairer justice system.
     </p>
-  </div>
+  </section>
 
-  <div class="divider animate-fade-in stagger-3"></div>
+  <div class="hr anim-in d3"></div>
 
-  <!-- Education -->
-  <div class="section animate-fade-up stagger-3">
-    <p class="section-label">Education</p>
+  <section class="section anim-in d4">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> education</h2>
     {% for edu in education %}
-    <div class="cv-entry">
+    <div class="entry">
       <h3>{{ edu.degree }}</h3>
-      <p class="institution">{{ edu.institution }}</p>
-      <p class="detail">{{ edu.detail }}</p>
+      <p class="entry-meta">{{ edu.institution }}</p>
+      <p class="entry-detail">{{ edu.detail }}</p>
     </div>
     {% endfor %}
-  </div>
+  </section>
 
-  <!-- Experience -->
-  <div class="section animate-fade-up stagger-4">
-    <p class="section-label">Experience</p>
+  <section class="section anim-in d5">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> experience</h2>
     {% for exp in experience %}
-    <div class="exp-entry exp-grid">
+    <div class="entry exp-row">
       <div>
         <h3>{{ exp.role }}</h3>
-        <p class="org">{{ exp.org }}</p>
+        <p class="entry-meta">{{ exp.org }}</p>
       </div>
-      <span class="period">{{ exp.period }}</span>
+      <span class="entry-period">{{ exp.period }}</span>
     </div>
     {% endfor %}
-  </div>
+  </section>
 
-  <!-- Consulting -->
-  <div class="section animate-fade-up stagger-5">
-    <p class="section-label">Consulting</p>
-    <h3 class="subheading" style="font-size: 1.125rem; margin-bottom: 0.5rem;">Zidar Analytics LLC</h3>
-    <p class="text-secondary">
+  <section class="section anim-in d6">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> consulting</h2>
+    <h3 class="consulting-name">Zidar Analytics LLC</h3>
+    <p>
       Public safety IT consulting specializing in technology, data analysis, and software development.
       Clients include University of Colorado at Boulder, the National Police Institute, and other
       data-driven organizations.
     </p>
-  </div>
+  </section>
 
-  <!-- Publications -->
-  <div class="section animate-fade-up stagger-6">
-    <p class="section-label">Publications</p>
+  <section class="section anim-in d7">
+    <h2 class="section-label"><span class="prompt-marker">&gt;</span> publications</h2>
     {% for item in publications %}
-    <div class="pub-entry">
+    <div class="pub">
       <p>
-        <span class="authors">{{ item.authors }}</span> ({{ item.year }}).
-        <span class="title">{{ item.title }}</span>.
-        {{ item.venue }}.
+        <span class="pub-authors">{{ item.authors }}</span> ({{ item.year }}).
+        <em>{{ item.title }}</em>.
+        <span class="text-dim">{{ item.venue }}</span>.
       </p>
     </div>
     {% endfor %}
-  </div>
+  </section>
 {% endblock %}

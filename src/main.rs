@@ -41,7 +41,7 @@ async fn index() -> IndexTemplate {
             Education {
                 degree: "M.S., Criminal Justice",
                 institution: "University of Cincinnati",
-                detail: "Specialization in Crime Prevention and Law Enforcement",
+                detail: "Specialization in Data-Driven Public Safety and Technology Adoption",
             },
             Education {
                 degree: "B.S., Criminal Justice",
@@ -54,6 +54,11 @@ async fn index() -> IndexTemplate {
                 role: "Sr. Manager, Corporate AI Solutions",
                 org: "Axon Enterprise, Inc.",
                 period: "2024 – Present",
+            },
+            Experience {
+                role: "Adjunct Assistant Professor",
+                org: "University of Cincinnati, School of Information Technology",
+                period: "2025 – Present",
             },
             Experience {
                 role: "Assistant Professor",

@@ -1,0 +1,44 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+
+      - name: Build and render static site
+        run: bash build.sh
+
+      - name: Copy Vercel config
+        run: cp vercel.json dist/
+
+      - name: Create Vercel project link
+        run: |
+          mkdir -p dist/.vercel
+          cat > dist/.vercel/project.json <<EOF
+          {"projectId":"${{ secrets.VERCEL_PROJECT_ID }}","orgId":"${{ secrets.VERCEL_ORG_ID }}"}
+          EOF
+
+      - name: Install Vercel CLI
+        run: npm i -g vercel
+
+      - name: Deploy to Vercel
+        working-directory: dist
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --yes
